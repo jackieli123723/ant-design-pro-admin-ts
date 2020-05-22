@@ -1,0 +1,106 @@
+### MOCK ok
+
+lenovo@lenovo-PC MINGW64 /g/react/ant-design-pro (master)
+$ yarn start
+yarn run v1.10.1
+$ umi dev
+🚀 Starting Umi UI using umi@3.2.0...
+🌈 Umi UI mini Ready on port 3000.
+Starting the development server...
+i Compiling Webpack
+√ Webpack: Compiled successfully in 33.62s
+ DONE  Compiled successfully in 33625ms10:10:22
+
+
+  App running at:
+  - Local:   http://localhost:8001 (copied to clipboard)
+  - Network: http://172.16.210.111:8001
+
+http://localhost:8001/api/login/account
+{status: "error", type: "account", currentAuthority: "guest"}
+{status: "ok", type: "account", currentAuthority: "admin"}
+
+
+###
+lenovo@lenovo-PC MINGW64 /g/react/ant-design-pro (master)
+$ yarn start:no-mock
+yarn run v1.10.1
+$ cross-env MOCK=none umi dev
+🚀 Starting Umi UI using umi@3.2.0...
+🌈 Umi UI mini Ready on port 3000.
+Starting the development server...
+i Compiling Webpack
+√ Webpack: Compiled successfully in 30.08s
+ DONE  Compiled successfully in 30080ms10:01:32
+
+
+## 启动上面两个 然后修改 proxy.ts
+  dev: {
+    '/api/': {
+      // target: 'https://preview.pro.ant.design',
+      target: 'http://localhost:8001',
+      changeOrigin: true,
+      pathRewrite: { '^': '' },
+    },
+
+
+然后可以用 mock了 
+
+
+## 官网示例的路由页面
+
+http://github.com/ant-design/pro-blocks.git
+
+
+lenovo@lenovo-PC MINGW64 /g/react/ant-design-pro (master)
+$  npm run fetch:blocks
+npm WARN npm npm does not support Node.js v12.8.1
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 6, 8, 9, 10, 11.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> ant-design-pro@4.0.0 fetch:blocks G:\react\ant-design-pro
+> pro fetch-blocks --branch=umi@3 && npm run prettier
+
+- 🧐  find config.ts ...
+√ 🧐  find config.ts ...
+📦  install login  to: /user/login
+- 😁  Parse url and args
+√ 😁  Parse url and args
+- 🔍  clone git repo from https://gitee.com/ant-design/pro-blocks.git
+Cloning into 'github.com/ant-design/pro-blocks'...
+√ 🔍  clone git repo from https://gitee.com/ant-design/pro-blocks.git
+- 📦  install dependencies package
+√ 📦  install dependencies package
+- 🔥  Generate files
+√ 🔥  Generate files
+- ⛱  Write route /user/login to config/config.ts
+√ ⛱  Write route /user/login to config/config.ts
+√  success   ✨  Probable url http://localhost:8000/user/login (copied to clipboard) for view the block.
+👌  install login  to: /user/login success
+📦  install register  to: /user/register
+- 😁  Parse url and args
+√ 😁  Parse url and args
+- 🚛  sync file for git repo --branch umi@3
+Branch umi@3 set up to track remote branch umi@3 from origin.
+Switched to a new branch 'umi@3'
+Already up-to-date.
+
+###
+
+ warning  in ./src/pages/user/register/index.tsx
+
+"export 'router' was not found in 'umi'
+
+
+试着使用一下 umi clean 已经改掉了，router 被废弃了，需要使用 history
+
+
+##  自己新建page 
+
+##
+
+
+## new page hooks tsx
+
