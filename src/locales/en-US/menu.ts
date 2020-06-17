@@ -50,4 +50,5 @@ export default {
   'menu.editor.mind': 'Mind Editor',
   'menu.editor.koni': 'Koni Editor',
   'menu.form.render': 'Custom Form',
+  'menu.pagation.render': 'Custom Pagation',
 };

@@ -283,6 +283,13 @@ export default defineConfig({
               icon: 'plus-square',
               component: './formrender/index',
             },
+            //hooks page
+            {
+              path: 'pagation-render',
+              name: 'pagation.render',
+              icon: 'plus-square',
+              component: './pagation/index',
+            },
             {
               path: '/',
               redirect: '/dashboard/analysis',
