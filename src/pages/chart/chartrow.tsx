@@ -25,7 +25,24 @@ const BizChartsRows: React.FC<{}> = (props) => {
 
   const { DataView } = DataSet;  
   const [dv, setData] = useState(new DataView());// null 默认参数可以吗？
-//   const [charts,setChartsR] = useState(dataSource) //不能用这个?  
+//   const [charts,setChartsR] = useState(dataSource) //不能用这个  直接用props 传递不能用useState 来存储 否则会有问题？
+
+   //test props 数组组装或者增加 
+   //改造源数据结构组装 
+   const newDataSource = dataSource.slice(0)
+   newDataSource.push({
+        State: "newxxxx",
+        "Under 5 Years": 358280,
+        "5 to 13 Years": 587154,
+        "14 to 17 Years": 261701,
+        "18 to 24 Years": 466194,
+        "25 to 44 Years": 1464939,
+        "45 to 64 Years": 1290094,
+        "65 Years and Over": 511094
+   })
+   console.log('newDataSource',newDataSource)
+   //增加一个数组？
+ 
 
   const ages = [
     "Under 5 Years",
@@ -64,7 +81,7 @@ const BizChartsRows: React.FC<{}> = (props) => {
 
     //way1
     let ds = new DataView();
-    ds.source(dataSource)
+    ds.source(newDataSource)
     .transform({
         type: "fold",
         fields: ages,
