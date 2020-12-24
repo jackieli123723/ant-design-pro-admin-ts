@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
-import './page.less';
+// import './page.less';
 
 // interface NumberArray {
 //   [index: number]: number;
 // }
+
+const noop = () => {};
 
 export interface PagationOptions {
   totalPage: number;
@@ -41,8 +43,8 @@ const Page: React.FC<PagationOptions> = ({
   showHeadTailPageButton = true,
   jumpText = '到第',
   jumpButtonText = '确定',
-  onPageChange = (e: any) => {},
-  onPageSizeChange = (e: any) => {},
+  onPageChange = (e: any) => noop,
+  onPageSizeChange = (e: any) => noop,
 }) => {
   const [jumpPage, setJumpPage]: [string, any] = useState<string>('');
   const [current, setCurrent]: [number, any] = useState<number>(currentPage);

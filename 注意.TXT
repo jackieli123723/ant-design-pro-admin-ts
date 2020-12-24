@@ -104,3 +104,15 @@ Already up-to-date.
 
 ## new page hooks tsx
 
+
+###
+### 四个测试框架 
+
+## 测试框架
+
+@testing-library/react-hooks  enzyme jest sinon
+
+
+## test bizcharts 示例 useEffect 依赖变化 
+
+###

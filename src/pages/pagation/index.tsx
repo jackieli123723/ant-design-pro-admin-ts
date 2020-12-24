@@ -1,7 +1,33 @@
 import React, { useState } from 'react';
 import Page from './page';
 import './index.less';
-import './page.less';
+
+import 'react-table-pagination/assets/theme.css';
+import ReactHooksPage from 'react-table-pagination/es6/index';
+
+//配合index.css使用
+// headPageButtonText={getDom(1)}
+// tailPageButtonText={getDom(4)}
+// prevPageButtonText={getDom(2)}
+// nextPageButtionText={getDom(3)}
+
+//
+// import Page from 'react-table-pagination/es6/index';
+// import Page from 'react-table-pagination/umd/index';
+
+// import useCounter from './useCounter/index';
+// function Level() {
+//   console.log('renderLevel12');
+//   const { count, start, stop, reset } = useCounter(0, 500);
+//   return (
+//     <>
+//       <div> count is {count}</div>
+//       <button onClick={start}>start</button>
+//       <button onClick={stop}>stop</button>
+//       <button onClick={reset}>reset</button>
+//     </>
+//   );
+// }
 const showToast = (msg: string): void => {
   console.log(msg);
 };
@@ -28,8 +54,8 @@ interface MockTableData {
 
 function PaginationHooksAlgorithm() {
   //不优雅实现
-  const [currentPage, setCurrentPage]: [number, any] = useState<number>(1);
-  const [totalPage]: [number, any] = useState<number>(11);
+  const [currentPage, setCurrentPage]: [number, any] = useState<number>(21);
+  const [totalPage]: [number, any] = useState<number>(2221);
   const [pageSize, setPageSize]: [number, any] = useState<number>(10);
 
   const [currentPage2, setCurrentPage2]: [number, any] = useState<number>(1);
@@ -112,7 +138,7 @@ function PaginationHooksAlgorithm() {
       id: item,
       name: 'jackieli',
       work: 'web前端开发',
-      address: '四川省成都市天府软件园',
+      address: '四川省成都市天府二街',
     };
   });
 
@@ -162,7 +188,7 @@ function PaginationHooksAlgorithm() {
             </tbody>
           </table>
         </div>
-        <Page
+        <ReactHooksPage
           totalPage={totalPage}
           currentPage={currentPage}
           pageSize={pageSize}
@@ -171,7 +197,6 @@ function PaginationHooksAlgorithm() {
           onPageSizeChange={onPageSizeChange}
         />
         <br />
-
         <Page
           totalPage={totalPage2}
           currentPage={currentPage2}
@@ -182,16 +207,10 @@ function PaginationHooksAlgorithm() {
           jumpText={'跳至'}
           jumpButtonText={'跳转'}
           showHeadTailPageButton={true}
-          headPageButtonText={getDom(1)}
-          tailPageButtonText={getDom(4)}
-          prevPageButtonText={getDom(2)}
-          nextPageButtionText={getDom(3)}
           onPageChange={onPageChange2}
           onPageSizeChange={onPageSizeChange2}
         />
-
         <br />
-
         <Page
           totalPage={totalPage3}
           currentPage={currentPage3}

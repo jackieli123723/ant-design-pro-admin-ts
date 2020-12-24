@@ -291,6 +291,12 @@ export default defineConfig({
               component: './pagation/index',
             },
             {
+              path: 'chart',
+              name: 'pagation.render',
+              icon: 'plus-square',
+              component: './chart/chart',
+            },
+            {
               path: '/',
               redirect: '/dashboard/analysis',
               authority: ['admin', 'user'],

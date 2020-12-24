@@ -39,6 +39,9 @@
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
     "test:page": "umi test ./src/pages",
+    "test:page:watch": "umi test ./src/pages --watch",
+    "test:page:coverage": "umi test ./src/pages --coverage",
+    "publish-to-npm": "npm run dist && npm publish && npm version patch",
     "tsc": "tsc"
   },
   "husky": {
@@ -62,13 +65,13 @@
     "@ant-design/icons": "^4.0.0",
     "@ant-design/pro-layout": "^5.0.8",
     "@ant-design/pro-table": "2.2.7",
-    "@antv/data-set": "^0.11.0",
+    "@antv/data-set": "^0.11.7",
     "@antv/l7": "^2.0.0",
     "@antv/l7-maps": "^2.0.0",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.isequal": "^4.5.5",
     "antd": "4.2.2",
-    "bizcharts": "^3.5.3-beta.0",
+    "bizcharts": "^3.5.9",
     "bizcharts-plugin-slider": "^2.1.1-beta.1",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
@@ -100,6 +103,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "@testing-library/react-hooks": "^3.3.0",
     "@types/classnames": "^2.2.7",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -136,6 +140,7 @@
     "prettier": "^2.0.1",
     "pro-download": "1.0.1",
     "puppeteer-core": "^3.0.0",
+    "sinon": "^9.0.2",
     "stylelint": "^13.0.0"
   },
   "engines": {

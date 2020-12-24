@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+// import Cascade from './Cascade.tsx';
+
 import Cascade from './Cascade';
 
 // import './index.less';
@@ -65,6 +67,7 @@ function FormRenderJsonScheme() {
     if (valid.length > 0) {
       alert(`校验未通过字段：${valid.toString()}`);
     } else {
+      console.log(JSON.stringify(formData, null, 2));
       alert(JSON.stringify(formData, null, 2));
     }
   };
